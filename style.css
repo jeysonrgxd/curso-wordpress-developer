@@ -1,0 +1,25 @@
+/*
+Theme Name: Clash royale-tema
+Theme URI: 
+Author: Jeyson Gino Ramos
+Author URI: https://github.com/jeysonrgxd?tab=repositories
+Description: Jugabilidad. Clash Royale es un videojuego basado en el universo de Clash of Clans (comparten personajes). En su primera edición contaba con 27 cartas que se han ido ampliando con las sucesivas actualizaciones del juego (actualmente cuenta con 96 cartas, la última fue la curandera guerrera).
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, news, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: twentyfourteen
+*/
+
+/*  
+   Estos comentarios son los archivos que lee el administrador de wordpress y que los enpiesan allenar cuando nosotros miramos la informacion d ecada tema. ojo:
+   el Tags o etiquetas se pociona en los temas de wp de acuerdo alas palabras claves la cuales: es las caracteristicas que tiene tu plantilla 
+
+*/
+
+html{
+   background-color: #313131;
+   color: #f3f3f3;
+   font-family: 'Ubuntu', sans-serif;
+   
+}
