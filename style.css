@@ -23,3 +23,7 @@ html{
    font-family: 'Ubuntu', sans-serif;
    
 }
+#wp-custom-header img{
+width: 100%;
+object-fit: cover;
+}

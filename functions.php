@@ -10,6 +10,9 @@
  * @version 1.0.0
  */
 
+//  OJO :> Aqui solo va configuracion basica: invocacion de  menu dada de alta de widget configuraciones iniciales de tema e invocacion de scripts de ahi afuera es mejor tenerlo en archivos diferentes para que se amas facil la moficacion del codigo
+
+
  if(!function_exists("mawt_scripts")):
    function mawt_scripts(){
       // esta funcion permite registrar una hoja de stylos, hay que darle un alias para que wordpress reconosca, el otro parametro es la url de la hoja de estylos, el parametro final null si no tenemos dependencia si en caso depende por ejemplo como google-font para que carge primero el google-fonts y luego carge la hoja de stylos,el siguiente parametro la version que es, el siguiente es para que medios es esn este caso para todos
@@ -48,6 +51,29 @@ if(!function_exists("mawt_setup")):
          'search-form',
          'gallery'
       ));
+      
+      // activacion de logo configurable para la personalizacion
+      add_theme_support("custom-logo", array(
+         'height' => 100,
+         'width' => 100,
+         // activacion de recorte
+         'flex-height' => true,
+         'flex-width' =>true
+      ));
+
+      // fondo y cabezera multimedia configurable para la personalizacion
+      add_theme_support("custom-background",array(
+         'default-color' => "DDD",
+         'default-image' => get_template_directory_uri()."/img/background-img.png",
+         'default-repeat' => 'repeat',
+         'default-position-x' =>"", 
+         'default-position-y' =>"",
+         'default-size'=>"",
+         'default-attachment'=> 'fixed'
+      ));
+
+      // activa la actualizaciòn selectiva de widget en el personalizador para que aparesca el lapicito
+      add_theme_support('customize-selective-refresh-widgets');
    }
 endif;
 // agregamos la funcion para que se ejecute despues de la accion after_setup_theme(despues de cargar el setup de wordpress)
@@ -101,3 +127,8 @@ if(!function_exists("mawt_register_sidebar")){
 }
 // el evento donde se ejecutara la funcion de activacion de widget
 add_action('widgets_init','mawt_register_sidebar');
+
+// importamos otro archivo para no hacer mas codigo
+// importante abeses esto en local no funciona tenemos que activar en el php.ini
+require_once get_template_directory().'/inc/custom-header.php';
+require_once get_template_directory().'/inc/customizer.php';

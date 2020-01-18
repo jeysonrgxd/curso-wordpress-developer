@@ -26,14 +26,29 @@
       
   
 </head>
-<body>
+<body <?php echo body_class("mi_clase1 miclase2");?> >
+
 <header>
+<!-- si hay header dinamico que se puso en la personalizacion del tema el userfreandli ps lo traemos -->
+<?php
+   get_header("wordpress")
+?>
+
 <!-- esta funcion con el parametro "/" nos da la url exta donde fue instalado el wordpress para saber mas sobre la funcion investigar en wordpress developer-->
 
 <!--esc_url(..) limpiar y que la url se balida espcios en blanco caracteres especiales y con esto satinisamos la url -->
-<h2><a href="<?= esc_url(home_url("/"))?>">LOGO</a></h2>
+<?php
+// si existe un logo configurable
+   if(has_custom_logo()){
+      // mandamos allamar ese logo configurable
+      the_custom_logo();
+   }else{
+      echo "<a href='".esc_url(home_url("/"))."'>".get_bloginfo('name')."</a>";
+   }
+?>
 
 <?php
+// traemos el menu que definimos en functions php y creamos con el dashboard de wordpress
  if(has_nav_menu('main_menu')){
    wp_nav_menu(array(
       'theme_location' => 'main_menu',
@@ -45,6 +60,7 @@
 {?>
    <nav>
       <ul>
+      <!-- imprimimos la lista de paginas, el parametro que le asignamos es para elininar el titulo que le da y el contendor ul que tambien leda. ya que nosotros ya estamos definiendo nuestro propia maqueta-->
          <?php wp_list_pages("title_li");?>
       </ul>
    </nav>
