@@ -121,14 +121,23 @@ if(!function_exists("mawt_register_sidebar")){
          'after_widget' => '</article>',
          'before_title' => '<h3>',
          'after_title' => '</h3>',
-      ));
-
-   }
+      )); 
+ 
+   }   
 }
 // el evento donde se ejecutara la funcion de activacion de widget
 add_action('widgets_init','mawt_register_sidebar');
+
+// cambiar a editor anterior y no tener el gutenberg
+add_filter('use_block_editor_for_post_type', '__return_false', 100);
 
 // importamos otro archivo para no hacer mas codigo
 // importante abeses esto en local no funciona tenemos que activar en el php.ini
 require_once get_template_directory().'/inc/custom-header.php';
 require_once get_template_directory().'/inc/customizer.php';
+
+// creamos do archivos mas que nos servira para la modificacion del login al dashboard de wordpress y el mismo dashboard
+ 
+require_once get_template_directory().'/inc/custom-login.php';
+require_once get_template_directory().'/inc/custom-admin.php';  
+ 

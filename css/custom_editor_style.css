@@ -1,0 +1,14 @@
+/* estos son una de las tantas clases que tiene ya por defecto y que podemos modificar a nuesto gusto */
+
+body#tinymce.wp-editor{
+   font-family: var(--fuente);
+
+}
+
+body#tinymce.wp-editor a{
+   color:var(--color);
+}
+
+body#tinymce.wp-editor a:hover{
+   color:var(--colorhover);
+}
