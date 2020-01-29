@@ -42,7 +42,18 @@ if(!function_exists("mawt_setup")):
    function mawt_setup(){
       // funcion para configurar cosas adicionales de nuestro temas para que funcione en wordpress, adicionalmente esta direccion nos ayudara a que mas acepta como parametro la funcion ya que no solo es post-thumbnails sino que acepta otras cosas para poder activar otras tipos de cosas 
       //https://developer.wordpress.org/reference/functions/add_theme_support/
+      //https://make.wordpress.org/polyglots/handbook/
+      // herramientas 
+      // https://www.icanlocalize.com/tools/php_scanner
+      // https://poedit.net/
+      // para saber como traducir donde emos utilizado __() o _e() mirar el video 3.2 archivos de traduccion de la clase 3 del curso numero 2 de creacion temas para wordpress de edteam no lo are por que seria perdida de tiempo. recodar archivos .mo .po que sonº
       add_theme_support("post-thumbnails");
+
+      // para poder activar o realizar al traduccion de nuestro tema, el primer parametro recive el textdomain que pusimos en el css general del tema, el segundo parametro apuntar a una carpeta con archivos de traduccion
+      // urls: para poder estudiar afondo
+      //https://developer.wordpress.org/themes/functionality/internationalization/
+
+      load_theme_textdomain('mawt', get_template_directory().'/languages');
       
       // activamos las etiquetas de  html5
       add_theme_support("html5",array(
@@ -136,7 +147,7 @@ add_filter('use_block_editor_for_post_type', '__return_false', 100);
 require_once get_template_directory().'/inc/custom-header.php';
 require_once get_template_directory().'/inc/customizer.php';
 
-// creamos do archivos mas que nos servira para la modificacion del login al dashboard de wordpress y el mismo dashboard
+// creamos dos archivos mas que nos servira para la modificacion del login al dashboard de wordpress y el mismo dashboard
  
 require_once get_template_directory().'/inc/custom-login.php';
 require_once get_template_directory().'/inc/custom-admin.php';  

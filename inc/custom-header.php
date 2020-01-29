@@ -32,7 +32,7 @@
       }
       </style>
    <?php
-      echo get_header_textcolor();
+      // echo get_header_textcolor();
    }
       endif;
       

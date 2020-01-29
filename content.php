@@ -27,6 +27,13 @@
 
 <!--Ojo:  recordar que sin el get muestra(imprime de frente), con el get(recupera mas no imprime)  -->
    <?php
+
+   // query personalizado para el loo principal osea sin en wp-query podemos hacer ojo esto nos dara la paginacion si esta llamado pero no funcionara para eso tenemos que realizar otros tipos de cosas en las funciones de paginacion que se encuentra mas abajo esta mas detallado el porque xD.!
+   // query_posts(array(
+   //    'posts_per_page'=> 1,
+   //    'orderby'=>'desc'
+   // ));
+
    // validamos si hay publicaciones
       if(have_posts()){
          // ahora rrecoremos las publicaciones
@@ -118,10 +125,19 @@
       } else{
    ?> 
    <p>El contenido solicitado no exite</p>
-   <?php } ?>   
+   <?php }
+      wp_reset_postdata();
+   ?>   
       
 </article>
 <section class="pagination">
+   <!-- esto asi como esta solo funcion en el loop tradicional no funcionara tanto como para query_posts(array(
+      'posts_per_page'=> 1,
+      'orderby'=>'asc'
+   )); y como para Wp_Quey
+   si desea hacerlo con esas dos nesesitara revisar el blog de new_autoland desarrollado_ ai realize una paginacion con wp_query osea loop personalizado o revisar la sigueinte url
+   https://wordpress.stackexchange.com/questions/160175/pagination-on-a-wp-query-not-showing-navigation-links
+-->
 <!-- estas dos primera funciones nos forma siguienta post y anterior post sin paginado -->
    <!-- <?= previous_post_link();?>
    <?= next_post_link();?> -->

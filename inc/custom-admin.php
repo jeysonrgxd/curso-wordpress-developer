@@ -47,16 +47,16 @@ add_action('admin_init','mawt_add_editor_styles');
 //admin menu para remover los ya existentes osea el menu del sidebar
 if(!function_exists('mawt_admin_menu')):
    function mawt_admin_menu(){
-      remove_menu_page('edit.php');//entradas
-      remove_menu_page('upload.php');//Multimedia
-      //remove_menu_page('link-manager.php');//Enlaces
-      //remove_menu_page('edit.php?post_type=page');//Páginas
-      //remove_menu_page('edit-comments.php');//comentarios
-      //remove_menu_page('themes.php');//Apariencia
-      //remove_menu_page('plugins.php');//Plugin
-      //remove_menu_page('users.php');//Usuarios
-      //remove_menu_page('tools.php');//Herramientas
-      //remove_menu_page('option-general.php');//Ajustes
+      // remove_menu_page('edit.php'); //entradas
+      // remove_menu_page('upload.php'); //Multimedia
+      // remove_menu_page('link-manager.php'); //Enlaces
+      // remove_menu_page('edit.php?post_type=page'); //Páginas
+      // remove_menu_page('edit-comments.php'); //comentarios
+      // remove_menu_page('themes.php'); //Apariencia
+      // remove_menu_page('plugins.php'); //Plugin
+      // remove_menu_page('users.php'); //Usuarios
+      // remove_menu_page('tools.php'); //Herramientas
+      // remove_menu_page('option-general.php'); //Ajustes
    } 
 endif;
 
