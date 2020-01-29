@@ -1,0 +1,18 @@
+/*
+Theme Name: Clash royale-tema child
+Theme URI: 
+Author: Jeyson Gino Ramos
+Author URI: https://github.com/jeysonrgxd?tab=repositories
+Template: mawt
+Description: tema hijo de clash royale-tema
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: blog, news, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, footer-widgets, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready
+Text Domain: child_mawt
+*/
+
+/* especificamos la configuracion para el tema hijo y traemos los estylos del padre si queremos que se vea igual y ya posterior mente ir cambiandolo a nuestro gusto */
+
+/* las buenas practicas nos dicen que no debemos traer ste stylo padre de esta manera para eso mejor es utilizar las funciones de php en el functions.php del chield tema */
+/* @import url('../mawt/style.css'); */
