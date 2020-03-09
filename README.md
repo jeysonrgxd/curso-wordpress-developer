@@ -11,3 +11,11 @@ Recordar que la carpeta **CHILD_MAWT** deve ser sacada una direccion atras osea 
 "tu_wordpress\pagina\wp-content\themes"
 
 junto con el tema principal **MAWT** para que asi wordpress lo reconosca como tema hijo
+
+## Recordar
+
+recordar que para crear una pagina en un tema desde cero en wordpress se puede hacer de dos formas:
+
+- podemos crear como creabamos en velogig creando una pagina.php y agregar despues de aber creado una pagina en el dashboard agregarle el template recordar esa parte
+
+- o dos podemos crear de acuerdo al grafico de la gerarquia de plantilla dw wordpress page-id, page-slug investigar esa parte
