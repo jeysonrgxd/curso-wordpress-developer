@@ -2,11 +2,13 @@
 LOOP de wordpress clase WP_Query: 
 " nos sirve para poder lanzar loop personalizados inclusive si en una misma plantilla en diferentes partes yo nesesito diferente informacion de mi wordpress"
 
+nos podemos fijar los datos que recive el array para el WP_Query en https://gist.github.com/luetkemj/2023628
  -->
 
 <section class="section-WP-Query">
 <h2>Este es una muestra del loop de wordpress personalizado</h2>
    <?php
+
 
    $wp_query = new WP_Query([
    'posts_per_page' => 3,
