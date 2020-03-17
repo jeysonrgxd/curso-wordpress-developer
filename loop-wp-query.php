@@ -30,6 +30,10 @@ nos podemos fijar los datos que recive el array para el WP_Query en https://gist
       endwhile;
 
    endif;
+   // limpiamos todas las variables del loop
    wp_reset_postdata();
+
+   // limpiar la variable de la consulta osea el args que recive el wp-query
+   wp_reset_query();
    ?>
 </section>

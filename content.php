@@ -90,6 +90,11 @@
       <p>Las categorias con get: <?= get_the_category()[0]->slug?></p>
       <p>Las categorias con get: <?= get_the_category()[0]->name?></p>
 
+      <!-- obtener id de la publicacion -->
+      <?= get_the_ID();?>
+      
+      <!-- obtener taxonomias personalizadas de una publicacion o de un custom post type -->
+      <?= get_the_term_list( get_the_ID(), 'tipo_mazos', '<p>', ', ', '</p>' ); ?>
 
       <!-- etiquetas -->
       <p>Las etiquetas son : <?= the_tags()?></p>
@@ -126,10 +131,18 @@
    ?> 
    <p>El contenido solicitado no exite</p>
    <?php }
+   // esto es por buena practicar limpiar el query y los argumentos
       wp_reset_postdata();
+      wp_reset_query();
+      
    ?>   
       
 </article>
+<!-- en esta seccion imprimimos el formulario generado atravez de un shortcode de contact-form-7 -->
+<section class="contact-form-7">
+<?= do_shortcode('[contact-form-7 id="75" title="Formulario de contacto 1"]');?>
+</section>
+
 <section class="pagination">
    <!-- esto asi como esta solo funcion en el loop tradicional no funcionara tanto como para query_posts(array(
       'posts_per_page'=> 1,
