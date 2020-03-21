@@ -119,7 +119,35 @@
       <p>Autor: <?= the_author();?></p>
       <!-- nombre del autor con un ancla para poder mostrar la pagina del autor si es que la crearamos -->
       <p>Autor con link: <?= the_author_posts_link();?></p>
-
+      
+      <!-- en esta parte imprimimos los custon flieds nativos de wordpress que pusimos en cada post -->
+      <div>
+         <h2>Custom Fields (campos personalizados) and Metaboxes con Advances CF </h2>
+         <!-- este me trae todo asta los campos generados por el Advance Custom Fields -->
+         <?= the_meta()?>
+         <p> metodo dos de traer Custom Fields</p>
+         <?= get_post_meta( get_the_ID(),'Elixir', true ) . "<br>"?>
+         <?= get_post_meta( get_the_ID(),'Wincondition', true ) . "<br>"?>
+         <!-- tambien se puede imprimir de esta manera el campo de ACF o tambien de la manera co el codigo que nos brina el acf-->
+         <?= get_post_meta( get_the_ID(),'descripcion', true )?>
+         <!-- <?php get_field('descripcion')?> -->
+         <!-- esta parte traeremos los Metaboxes generados por el plugin de Advance custom fields -->
+         <br>
+         <p><strong>Features descripcion:</strong> <?php the_field('descripcion');?></p>
+         <div class="cont_img-win">
+            <h3>Imagen de win condition</h3>
+            <?php $get_img_win = get_field("imagen_win_condition");
+               if($get_img_win){
+                  // para que puedas ver todo lo que trae
+                  // var_dump($get_img_win);
+                  ?>
+               <img src="<?= $get_img_win['url']?>" alt="winCondition">
+            <?php } ?>
+               
+            
+         </div>
+      </div>
+<hr>
       <!-- contenido: nos imprime todo el contenido que hayamos puesto en la publicacion podemos meterlo en un div darle una clase y luego darle stylos al contenido que nos trae ya que nos trae en etiquetas html -->
       <div class="contenido-total">
          <?= the_content()?>
