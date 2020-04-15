@@ -154,3 +154,6 @@ require_once get_template_directory().'/inc/custom-admin.php';
 
 //agregamos archivo de modificacion al loop principal
 require_once get_template_directory().'/inc/custom-pre-get-posts.php';
+
+// agregamos archivo een el cual crearemos un menu de ajustes del tema
+require_once get_template_directory().'/inc/custom-theme-options.php';
