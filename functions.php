@@ -97,8 +97,8 @@ if(!function_exists("mawt_menus")):
       register_nav_menus(array(
          // funcion espacial lo que hace es imprimir y tambien es para que se tradusca cierta parta de mi template
          // 
-         'main_menu' => __("Menú Principal",'mawt'),
-         'social_menu' => __('Menú redes sociales', 'mawt')
+         'social_menu' => __('Menú redes sociales', 'mawt'),
+         'main_menu' => __("Menú Principal",'mawt')
       ));
 
    }

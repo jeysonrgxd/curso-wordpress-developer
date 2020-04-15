@@ -23,9 +23,22 @@
    } 
 ?>
 <aside>
-<?php dynamic_sidebar('footer_sidebar')?>
+   <?php dynamic_sidebar('footer_sidebar')?>
 </aside>
-   <small>&copy; 2019 por @jeyson</small>
+   <p>
+      <small>
+      <!-- de esta forma inprimimos una opcion que guardamos en option.phph -->
+         <?php 
+         if(get_option('mawt_footer_text') !== ""):
+            echo "<strong>".esc_html(get_option('mawt_footer_text'))."</strong>";
+         else:?>
+            &copy; 2019 por @jeyson
+         
+         <?php  
+            endif;
+         ?>
+      </small>
+   </p>
 </footer>
 <?= wp_footer();?>
 </body>
