@@ -155,5 +155,8 @@ require_once get_template_directory().'/inc/custom-admin.php';
 //agregamos archivo de modificacion al loop principal
 require_once get_template_directory().'/inc/custom-pre-get-posts.php';
 
-// agregamos archivo een el cual crearemos un menu de ajustes del tema
+// agregamos archivo en el cual crearemos un menu de ajustes del tema
 require_once get_template_directory().'/inc/custom-theme-options.php';
+
+// agregamos archivo en el cual crearemos un formulario de contacto
+require_once get_template_directory().'/inc/custom-contact-form.php';
