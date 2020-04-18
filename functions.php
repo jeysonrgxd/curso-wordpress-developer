@@ -142,6 +142,73 @@ add_action('widgets_init','mawt_register_sidebar');
 // cambiar a editor anterior y no tener el gutenberg
 add_filter('use_block_editor_for_post_type', '__return_false', 100);
 
+// creacion de nuevo post
+
+function cursos_manager_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Cursos', 'Post Type General Name' ),
+		'singular_name'         => _x( 'Curso', 'Post Type Singular Name' ),
+		'menu_name'             => __( 'Cursos' ),
+		'name_admin_bar'        => __( 'Curso' ),
+		'archives'              => __( 'Archivo de curso' ),
+		'attributes'            => __( 'Atributos de curso' ),
+		'parent_item_colon'     => __( 'Curso padre:' ),
+		'all_items'             => __( 'Todos los cursos' ),
+		'add_new_item'          => __( 'Agregar' ),
+		'add_new'               => __( 'Agregar curso' ),
+		'new_item'              => __( 'Nuevo curso' ),
+		'edit_item'             => __( 'Editar curso' ),
+		'update_item'           => __( 'Actualizar' ),
+		'view_item'             => __( 'Ver curso' ),
+		'view_items'            => __( 'Ver cursos' ),
+		'search_items'          => __( 'Buscar cursos' ),
+		'not_found'             => __( 'No encontrado' ),
+		'not_found_in_trash'    => __( 'No encontrado en la basura' ),
+		'featured_image'        => __( 'Imagen destacada' ),
+		'set_featured_image'    => __( 'Cambiar imagen destacada' ),
+		'remove_featured_image' => __( 'Eliminar imagen destacada' ),
+		'use_featured_image'    => __( 'Usar como imagen destacada' ),
+		'insert_into_item'      => __( 'Insertar imagen destacada' ),
+		'uploaded_to_this_item' => __( 'Subir a curso' ),
+		'items_list'            => __( 'Lista de cursos' ),
+		'items_list_navigation' => __( 'Navegación de cursos' ),
+		'filter_items_list'     => __( 'Filtrar cursos' ),
+	);
+	// $rewrite = array(
+	// 	'slug'                  => 'curso',
+	// 	'with_front'            => true,
+	// 	'pages'                 => true,
+	// 	'feeds'                 => true,
+	// );
+	$args = array(
+		'label'                 => __( 'Curso', 'text_domain' ),
+		'description'           => __( 'Post type for Plain', 'text_domain' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'editor' ),
+		'hierarchical'          => false,
+		'public'                => false,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'menu_icon'             => 'dashicons-welcome-learn-more',
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => true,
+		'has_archive'           => false,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => false,
+		'rewrite'               => false,
+		'capability_type'       => 'post',
+	);
+	register_post_type( 'cursos_manager', $args );
+
+}
+add_action( 'init', 'cursos_manager_post_type', 0 );
+
+
+
+
 // importamos otro archivo para no hacer mas codigo
 // importante abeses esto en local no funciona tenemos que activar en el php.ini
 require_once get_template_directory().'/inc/custom-header.php';
