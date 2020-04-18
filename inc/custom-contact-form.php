@@ -112,7 +112,7 @@
       function mawt_contact_form($atts){
          echo"
             <div>
-               <h1>".$atts[title] ."</h1>
+               <h1>".$atts['title'] ."</h1>
             </div>
          ";
       }
