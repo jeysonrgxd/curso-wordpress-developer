@@ -110,16 +110,53 @@
    //creamos nuestro shortcode
    if(!function_exists("mawt_contact_form")){
       function mawt_contact_form($atts){
-         echo"
-            <div>
-               <h1>".$atts['title'] ."</h1>
-            </div>
-         ";
+         // echo"
+         //    <div>
+         //       <h1>".$atts['title'] ."</h1>
+         //    </div>
+         // ";?>
+         <!-- el action se va auto procesar por eso no lo ponemos -->
+         <form class="ContactForm" method="POST">
+            <legend><?php echo $atts['title']?></legend>
+            <input type="text" name="name" placeholder="Escribe tu nombre">
+            <input type="email" name="email" placeholder="Escribe tu email">
+            <input type="text" name="subject" placeholder="Asunto a tratar">
+            <textarea name="comments" cols="50" rows="5" placeholder="Escribe tus comentarios"></textarea>
+            <input type="submit" value="Enviar">
+         </form>
+
+<?php
       }
 
    }
 
    add_shortcode('contact_form','mawt_contact_form');
+
+// traemos las hojas de stylos y los archivos js
+
+ if(!function_exists("mawt_contact_scripts")):
+
+   function mawt_contact_scripts(){
+
+      // especificamos que si es cierta pagina cargame los estylos y scripts en este caso lo validamos por su slug
+      if(is_page("contacto")){
+
+         wp_register_style('contact-form-style',get_template_directory_uri().'/css/contact_form.css' , array(),'1.0.0','all');
+
+         wp_enqueue_style("contact-form-style");
+
+         wp_register_script('contact-form-script', get_template_directory_uri()."/js/contact_form.js",array(),'1.0.0',true );
+
+         wp_enqueue_script('contact-form-script');
+
+      }
+      
+   }
+
+endif;
+
+add_action( 'wp_enqueue_scripts', 'mawt_contact_scripts' );
+
 
 ?>
 
